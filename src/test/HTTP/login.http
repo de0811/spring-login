@@ -1,0 +1,47 @@
+
+### 일반 로그인
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "username": "qwe",
+  "password": "qwe"
+}
+
+> {%
+    let authorization = response.headers.valueOf("Authorization");
+    client.global.set("authorization", authorization);
+    console.log(authorization);
+%}
+
+### Form json 데이터 로그인
+POST http://localhost:8080/api/login
+Content-Type: X-WWW-Form-Urlencoded
+
+{
+  "username": "qwe",
+  "password": "qwe"
+}
+
+> {%
+    let authorization = response.headers.valueOf("Authorization");
+    client.global.set("authorization", authorization);
+    console.log(authorization);
+%}
+
+### Form json 데이터 로그인
+POST http://localhost:8080/api/login
+Content-Type: application/x-www-form-urlencoded
+
+username=qwe&password=qwe
+
+> {%
+    let authorization = response.headers.valueOf("Authorization");
+    client.global.set("authorization", authorization);
+    console.log(authorization);
+%}
+
+### jwt 그대로 user 로 접속
+GET http://localhost:8080/user
+Authorization: {{authorization}}
+

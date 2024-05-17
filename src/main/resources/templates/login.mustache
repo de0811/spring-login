@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
+</head>
+<body>
+<h1>로그인 페이지</h1>
+<hr/>
+<!-- 시큐리티는 x-www-form-url-encoded 타입만 인식 -->
+<!--<form action="/loginProc" method="post">-->
+<!--	<input type="text" name="username" />-->
+<!--	<input type="password" name="password" />-->
+<!--	<button>로그인</button>-->
+<!--</form>-->
+<form action="/api/login" method="post">
+  <input type="text" name="username" />
+  <input type="password" name="password" />
+  <button>로그인</button>
+</form>
+
+<br />
+
+	<h1>Social Login</h1>
+<br />
+	<!-- javascript:; 는 클릭해도 반응을 없게 하는 키워드 -->
+	<a href="/oauth2/authorization/github" >
+		<img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-1024.png"
+				 alt="github" width="48px" height="48px">
+	</a>
+	<br />
+	<a href="/oauth2/authorization/google" >
+	<img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-1024.png"
+		alt="google" width="48px" height="48px">
+	</a>
+	<br />
+	<a href="/oauth2/authorization/facebook"> 
+	<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-1024.png"
+		alt="facebook" width="48px" height="48px">
+	</a>
+	<br />
+	<a href="/oauth2/authorization/naver">
+	<img src="https://cdn3.iconfinder.com/data/icons/address-book-providers-in-black-white/512/naver-1024.png"
+		alt="naver" width="48px" height="48px">
+	</a>
+  <br />
+  <a href="/oauth2/authorization/kakao">
+    <img src="https://cdn1.iconfinder.com/data/icons/rounded-social-media/512/kakao-512.png"
+         alt="kakao" width="48px" height="48px">
+  </a>
+	<br />
+</body>
+</html>
